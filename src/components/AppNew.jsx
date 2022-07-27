@@ -3,7 +3,7 @@ import HomeView from "./HomeView/HomeView"
 import RegisterView from './RegisterView/RegisterView';
 import { Route, Routes } from 'react-router-dom';
 import LoginView from "./LoginView/LoginView";
-import AuthNavigation from './Navigation/Navigation';
+import AppBar from './AppBar/AppBar';
 
 
 
@@ -14,7 +14,7 @@ const App = () => {
 
 return (
   <div>
-    <AuthNavigation></AuthNavigation>
+    <AppBar></AppBar>
 
     <Routes>
    <Route  path ="/" element = {<HomeView></HomeView>}></Route>
