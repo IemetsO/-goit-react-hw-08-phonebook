@@ -30,7 +30,7 @@ const App = () => {
           <Route
             path="/"
             element={
-              <PublicRoute redirectTo = "/contacts">
+              <PublicRoute>
                 <HomeView />
               </PublicRoute>
             }

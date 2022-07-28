@@ -1,7 +1,6 @@
 import Contact from '../Contact/Contact';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContact, removeContact} from "../../Redux/contacts/contacts-operation";
+import {  removeContact} from "../../Redux/contacts/contacts-operation";
 import s from "./ContactList.module.css";
 
 const ContactList = () => {
@@ -15,9 +14,7 @@ const filteredList = contactList.filter(contact =>
   contact.name.toLowerCase().includes(filter.toLowerCase())
 );
 
-// useEffect (() => {
-//   dispatch(fetchContact());
-// },[dispatch])
+
 
 const onDelete = (id) => {
   dispatch(removeContact(id))
