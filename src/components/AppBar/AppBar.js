@@ -10,7 +10,7 @@ const isLoggedIn = useSelector(state =>state.auth.isLoggedIn)
 
   return (
     <header>
-    { isLoggedIn ?<UserMenu /> : <AuthNavigation/> } 
+    { {isLoggedIn:toString()} ? <UserMenu /> : <AuthNavigation/> } 
     </header>
   );
 }
