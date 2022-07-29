@@ -7,10 +7,12 @@ import authOperations from '../Redux/auth/auth-operations';
 import PrivateRoute from './UserMenu/PrivateRoute';
 import PublicRoute from './PublicRoute';
 import AppBar from './Navigation/Navigation';
+import { Spinner } from 'react-bootstrap';
 const HomeView = lazy(() => import('../Views/HomeView/HomeView'));
 const RegisterView = lazy(() => import('../Views/RegisterView/RegisterView'));
 const LoginView = lazy(() => import('../Views/LoginView/LoginView'));
 const UserMenu = lazy(() => import('../components/UserMenu/UserMenu'));
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,7 +28,9 @@ const App = () => {
     !isRefreshingCurrentUser && (
       <div>
         <AppBar />
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={ <Spinner animation="border" role="status" className="mt-5">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>}>
           <Routes>
           <Route
               path="/contacts"

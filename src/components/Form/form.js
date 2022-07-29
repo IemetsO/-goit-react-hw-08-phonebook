@@ -49,9 +49,10 @@ export default function Form() {
     setNumber('');
   };
 
-  return (
+  return (<div className={s.container}>
     <form onSubmit={handleSubmit}>
-      <label  className="mb-3">
+      <div>
+      <label  className={s.text}>
         Name
         <input
           className={s.input}
@@ -64,7 +65,9 @@ export default function Form() {
           onChange={handleChange}
         />
       </label>
-      <label className="mb-3">
+      </div>
+      <div>
+      <label className={s.text}>
         Number
         <input
           className={s.input}
@@ -77,10 +80,9 @@ export default function Form() {
           onChange={handleChange}
         />
       </label>
-      <button variant="primary" type="submit">
-        {' '}
-        Add Contact
-      </button>
+      </div>
+      <button type="button" className = {s.button}>Add Contact</button>
     </form>
+    </div>
   );
 }

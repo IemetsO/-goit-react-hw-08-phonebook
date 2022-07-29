@@ -1,0 +1,28 @@
+.header{
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.link{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.span{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.button{
+    background-color: lightblue;
+    font-size: 18px;
+    border-radius: 2px;
+}
