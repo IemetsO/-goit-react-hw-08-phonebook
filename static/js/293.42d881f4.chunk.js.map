@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/293.42d881f4.chunk.js","mappings":"mKAUA,UAPiB,WACb,OACA,0BACI","sources":["Views/HomeView/HomeView.js"],"sourcesContent":["import React from \"react\";\n\n\nconst HomeView = () =>{\n    return(\n    <div>\n        <h1>Welcome! Please register or login</h1>\n    </div>)\n}\n\nexport default HomeView"],"names":[],"sourceRoot":""}
