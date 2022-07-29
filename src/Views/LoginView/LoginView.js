@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../Redux/auth';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -23,8 +24,8 @@ export default function LoginView() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.login({ email, password }));
-    // setEmail('');
-    // setPassword('');
+    setEmail('');
+    setPassword('');
   };
 
   return (
@@ -51,8 +52,7 @@ export default function LoginView() {
             onChange={handleChange}
           />
         </label>
-
-        <button type="submit">Log in</button>
+        <Button variant="primary" type="submit">Log In</Button>
       </form>
     </div>
   )}

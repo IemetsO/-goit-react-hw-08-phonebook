@@ -2,8 +2,7 @@ import React, { useCallback } from 'react';
 import s from './Form.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from "../../Redux/contacts/contacts-operation";
-
+import { addContact } from '../../Redux/contacts/contacts-operation';
 
 
 export default function Form() {
@@ -12,21 +11,24 @@ export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const handleChange = useCallback(event => {
-    const { name, value } = event.target;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
+  const handleChange = useCallback(
+    event => {
+      const { name, value } = event.target;
+      switch (name) {
+        case 'name':
+          setName(value);
+          break;
 
-      case 'number':
-        setNumber(value);
-        break;
+        case 'number':
+          setNumber(value);
+          break;
 
-      default:
-        return;
-    }
-  },[setName, setNumber] );
+        default:
+          return;
+      }
+    },
+    [setName, setNumber]
+  );
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -42,8 +44,6 @@ export default function Form() {
     reset();
   };
 
-  
-
   const reset = () => {
     setName('');
     setNumber('');
@@ -51,7 +51,7 @@ export default function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label  className="mb-3">
         Name
         <input
           className={s.input}
@@ -64,7 +64,7 @@ export default function Form() {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="mb-3">
         Number
         <input
           className={s.input}
@@ -77,7 +77,7 @@ export default function Form() {
           onChange={handleChange}
         />
       </label>
-      <button className={s.button} type="submit">
+      <button variant="primary" type="submit">
         {' '}
         Add Contact
       </button>
