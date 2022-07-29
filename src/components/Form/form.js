@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../Redux/contacts/contacts-operation';
 
-
 export default function Form() {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.items);
@@ -49,40 +48,43 @@ export default function Form() {
     setNumber('');
   };
 
-  return (<div className={s.container}>
-    <form onSubmit={handleSubmit}>
-      <div>
-      <label  className={s.text}>
-        Name
-        <input
-          className={s.input}
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-          value={name}
-          onChange={handleChange}
-        />
-      </label>
-      </div>
-      <div>
-      <label className={s.text}>
-        Number
-        <input
-          className={s.input}
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          value={number}
-          onChange={handleChange}
-        />
-      </label>
-      </div>
-      <button type="button" className = {s.button}>Add Contact</button>
-    </form>
+  return (
+    <div className={s.container}>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label className={s.text}>
+            Name
+            <input
+              className={s.input}
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+              value={name}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label className={s.text}>
+            Number
+            <input
+              className={s.input}
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              value={number}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <button type="submit" className={s.button} onClick ={handleSubmit}>
+          Add Contact
+        </button>
+      </form>
     </div>
   );
 }
