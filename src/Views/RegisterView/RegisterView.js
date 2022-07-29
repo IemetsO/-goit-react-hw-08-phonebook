@@ -8,12 +8,11 @@ export default function RegisterView() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(false);
   const regError = useSelector(state => state.auth.registerError)
 
   useEffect(() => {
     if (regError) {
-      setError(true);
+      alert('Please check your name and email, minimum length for password is 7');
     }
   }, [regError]);
 
@@ -33,15 +32,11 @@ export default function RegisterView() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-    setName('');
-    setEmail('');
-    setPassword('');
   };
 
   return (
     <div className={s.container}>
       <h1 className={s.text}>Registration Page</h1>
-      {error && <div className={s.infotext}>Please check your name and email, minimum length for password is 7 </div>}
       <form onSubmit={handleSubmit}>
         <div>
           <label className={s.text}>
